@@ -12,9 +12,29 @@ public class ProductoRepository {
     private List<Producto> productos = new ArrayList<>();
 
     public ProductoRepository() {
-        productos.add(new Producto(1, "Pastel de Chocolate", "Pastel húmedo con cobertura de cacao", 5000.0, "https://example.com/chocolate.png", 1));
-        productos.add(new Producto(2, "Cheesecake", "Tarta de queso con base de galleta", 4500.0, "https://example.com/cheesecake.png", 1));
-        productos.add(new Producto(3, "Pie de Limón", "Postre fresco con merengue", 4000.0, "https://example.com/pielimon.png", 1));
+
+        String servidor = "http://44.220.58.124:8080";
+
+        // 1. Pastel de Chocolate (Usando la foto local chocolate.jpg)
+        productos.add(new Producto(1,
+                "Pastel de Chocolate",
+                "Pastel húmedo con cobertura de cacao.",
+                5000.0,
+                servidor + "/chocolate.jpg")); // <--- Asegúrate de renombrar el archivo largo a chocolate.jpg
+
+        // 2. Cheesecake
+        productos.add(new Producto(2,
+                "Cheesecake",
+                "Tarta de queso con base de galleta.",
+                4500.0,
+                servidor + "/cheesecake_frutilla.jpg"));
+
+        // 3. Cupcake (Usando tu foto de cupcake)
+        productos.add(new Producto(3,
+                "Cupcake de Vainilla",
+                "Suave y esponjoso con crema.",
+                3500.0,
+                servidor + "/cupcake_vainilla.jpg"));
     }
 
     public List<Producto> findAll() {

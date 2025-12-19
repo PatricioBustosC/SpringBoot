@@ -13,7 +13,7 @@ public class ProductoRepository {
 
     public ProductoRepository() {
 
-        String servidor = "http://98.80.98.199:8080";
+        String servidor = "http://10.0.2.2:9090/";
 
         // 1. Pastel de Chocolate (Usando la foto local chocolate.jpg)
         productos.add(new Producto(1,
